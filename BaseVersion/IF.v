@@ -16,7 +16,7 @@ module IF(
 	
 	initial begin
 		PC <= 32'h00003000;
-		$readmemh("code.txt", ROM);
+		$readmemh("C:\\Users\\16922\\Desktop\\code.txt", ROM);
 		F_instruc <= 0;
 		FD_PC <= 0;
 	end
