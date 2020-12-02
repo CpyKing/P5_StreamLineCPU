@@ -73,7 +73,7 @@ module Controller(
 	assign AluSrc =  ori || lb || lw || sw || sb || lui || addi;
 	assign MemWrite = sb || sw;
 	assign isByte = lb || sb;
-	assign MemtoReg = {jal || jalr, jalr || jal || addu || subu || ori || lui || addi};
+	assign MemtoReg = {jal || jalr || lb, jalr || jal || addu || subu || ori || lui || addi};
 	assign BExtOp = lb;
 	assign PassAPC = jal || jalr;
 	
