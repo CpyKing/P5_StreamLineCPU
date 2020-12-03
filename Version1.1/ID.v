@@ -104,6 +104,7 @@ module ID(
 				2'b01:	DE_WRA <= D_instruc[`rt];
 				2'b10:	DE_WRA <= D_instruc[`rd];
 				2'b11:	DE_WRA <= ra;
+				default:	DE_WRA <= 5'bx;
 			endcase
 			
 			case(ExtOp)
