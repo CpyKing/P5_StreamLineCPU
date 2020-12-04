@@ -36,7 +36,8 @@ module Hazard_Unit(
 	assign TnewM = reg_TnewM;
 	always @(posedge clk)	reg_TnewM = (TnewE == 0) ? 0 : (TnewE - 1);
 	//	Tuse...
-	assign Tuse_rs = (DIBus[`jr] || DIBus[`beq] || DIBus[`jalr]) ? 0 : 1;
+	assign Tuse_rs = (DIBus[`jr] || DIBus[`beq] || DIBus[`jalr]) ? 0 :
+					 (DIBus[`j] || DIBus[`jal])					 ? 3 : 1;
 	assign Tuse_rt = (DIBus[`beq]) ? 0 :
 					 (DIBus[`addu] || DIBus[`subu]) ? 1 :
 					 (DIBus[`sw] || DIBus[`sb]) ? 2 : 3;
