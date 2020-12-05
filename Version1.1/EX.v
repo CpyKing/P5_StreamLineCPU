@@ -24,7 +24,7 @@ module EX(
 	output wire [4:0] E_rt
     );
 	//	Declaration
-	wire [1:0] AluCtrl;
+	wire [3:0] AluCtrl;
 	wire [31:0] AluResult;
 	wire AluSrc;
 	wire [31:0] A, B;
